@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detección de Objetos con OpenCV y YOLO</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Detección de Objetos</h1>
+
+        <div>
+            <input type="file" id="fileInput" accept=".jpg, .jpeg, .png" class="form-control-file">
+            <button onclick="processImage()" class="btn btn-primary mt-2">Procesar Imagen</button>
+        </div>
+
+        <div id="imageContainer" class="mt-4">
+        </div>
+
+        <div id="resultContainer" class="mt-4">
+        </div>
+    </div>
+
+    <script>
+   function processImage() {
+    const fileInput = document.getElementById('fileInput').files[0];
+    const formData = new FormData();
+    formData.append('image', fileInput);
+
+    fetch('http://localhost:5000/detect', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Manejar la respuesta del servidor aquí
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+    </script>
+</body>
+
+</html>

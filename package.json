@@ -1,0 +1,16 @@
+{
+  "name": "proyectointegradora",
+  "version": "1.0.0",
+  "main": "EntornoNode.js",
+  "dependencies": {
+    "jsbarcode": "^3.11.6",
+    "opencv-build": "^0.1.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
